@@ -554,7 +554,7 @@ utils.defineProperty(Wallet, 'RNFromMnemonic', function(mnemonic, path) {
 
   return new Promise(function(resolve, reject){
       RNhdnode.then((hdnode)=>{
-          console.log('hdnode', hdnode);
+          // console.log('hdnode', hdnode);
           if(!hdnode){
               reject('invalid hdnode');
               return;

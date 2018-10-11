@@ -163,14 +163,14 @@ utils.defineProperty(HDNode, 'RNFromMnemonic', function(mnemonic){
       // mnemonic = utils.toUtf8Bytes(mnemonic, 'NFKD');
       // var salt = utils.toUtf8Bytes('mnemonic' + password, 'NFKD');
 
-      console.log('mnemonic', mnemonic);
+      // console.log('mnemonic', mnemonic);
 
       var aesSeeds = Aes.pbkdf2(mnemonic, 'mnemonic' + password, 2048, 64*8)
 
 
       aesSeeds.then((seeds)=>{
           // console.log(mnemonic, salt, 2048, 64, utils.createSha512Hmac);
-          console.log('seeds is ', seeds);
+          // console.log('seeds is ', seeds);
           var myhdnode = HDNode.fromSeed(utils.hexlify('0x'+seeds));
           resolve(myhdnode);
       });
